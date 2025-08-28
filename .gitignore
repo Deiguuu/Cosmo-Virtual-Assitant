@@ -1,0 +1,12 @@
+# Entorno virtual
+venv/
+env/
+
+# Carpeta con modelos grandes
+models/
+
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd

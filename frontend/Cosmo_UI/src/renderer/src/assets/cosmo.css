@@ -1,0 +1,224 @@
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    /* 👈 evita scroll extra */
+}
+
+/* Fondo principal */
+.cosmo-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    user-select: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Título superior */
+.cosmo-title {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ccc;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+/* Panel central */
+.cosmo-panel {
+    background: rgba(26, 26, 26, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+        inset 0 0 20px rgba(255, 255, 255, 0.05),
+        0 8px 32px rgba(0, 0, 0, 0.4);
+    width: 320px;
+    height: 380px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 24px;
+}
+
+/* Controles */
+.cosmo-controls {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botones */
+.cosmo-btn {
+    padding: 16px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease;
+}
+
+.cosmo-btn.power,
+.cosmo-btn.options {
+    background-color: #2a2a2a;
+}
+
+.cosmo-btn.power:hover,
+.cosmo-btn.options:hover {
+    background-color: #3a3a3a;
+}
+
+.cosmo-btn.mic-on {
+    background-color: #16a34a;
+}
+
+.cosmo-btn.mic-on:hover {
+    background-color: #15803d;
+}
+
+.cosmo-btn.mic-off {
+    background-color: #dc2626;
+}
+
+.cosmo-btn.mic-off:hover {
+    background-color: #b91c1c;
+}
+
+/* Notificación inferior */
+.cosmo-notification {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    font-size: 0.75rem;
+}
+
+.cosmo-notification.active {
+    background-color: #15803d;
+    border-color: #22c55e;
+}
+
+.cosmo-notification.inactive {
+    background-color: #1a1a1a;
+    border-color: #525252;
+}
+
+.cosmo-notification span {
+    color: #e5e5e5;
+}
+
+/* Efecto glow cuando activo */
+.cosmo-panel.active {
+    box-shadow: 0 0 25px 6px rgba(60, 60, 60, 0.6);
+    transition: box-shadow 0.4s ease;
+}
+
+/* Botones Power y Options con color original oscuro e iconos blancos */
+.cosmo-btn.power,
+.cosmo-btn.options {
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+.cosmo-btn.power:hover,
+.cosmo-btn.options:hover {
+    background-color: #3a3a3a;
+}
+
+/* Botones de micrófono */
+.cosmo-btn.mic-on {
+    background-color: #16a34a;
+    animation: pulse 2s infinite;
+}
+
+.cosmo-btn.mic-on:hover {
+    background-color: #15803d;
+}
+
+.cosmo-btn.mic-off {
+    background-color: #dc2626;
+}
+
+.cosmo-btn.mic-off:hover {
+    background-color: #b91c1c;
+}
+
+/* Notificación inferior */
+.cosmo-notification {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    font-size: 0.75rem;
+}
+
+.cosmo-notification.active {
+    background-color: #15803d;
+    border-color: #22c55e;
+}
+
+.cosmo-notification.inactive {
+    background-color: #1a1a1a;
+    border-color: #525252;
+}
+
+.cosmo-notification span {
+    color: #e5e5e5;
+}
+
+
+/* Animación de pulso para micrófono encendido */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    }
+
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(34, 197, 94, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
+}
+
+.cosmo-btn.mic-on {
+    animation: pulse 2s infinite;
+    color: #fff;
+}
+
+/* Transición suave en notificación */
+.cosmo-notification {
+    transition: all 0.3s ease;
+}

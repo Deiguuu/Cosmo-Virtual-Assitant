@@ -1,0 +1,14 @@
+{
+  "wake_word": "cosmo",
+  "command_timeout": 10,
+  "sample_rate": 16000,
+  "apps": {
+    "bloc de notas": "notepad",
+    "calculadora": "calc",
+    "chrome": "chrome",
+    "word": "winword",
+    "paint": "mspaint",
+    "explorador": "explorer",
+    "cmd": "cmd"
+  }
+}
